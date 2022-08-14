@@ -199,7 +199,7 @@ class _None_Used(nn.Module):
 
 class Transformer(nn.Module):
     
-    def __init__(
+    def __init__( 
         self, n_src_vocab, n_trg_vocab, src_pad_idx, trg_pad_idx, d_word_vec=512, d_model=512, d_inner=2048,
         n_layers=6, n_head=8, d_k=64, d_v=64, dropout=0.1, n_position=200,
         trg_emb_prj_weight_sharing=True, emb_src_trg_weight_sharing=True,
@@ -252,8 +252,8 @@ class Transformer(nn.Module):
         # enc dec weight 공유
         if emb_src_trg_weight_sharing:
             self.encoder.src_word_emb.weight = self.decoder.trg_word_emb.weight
-        
-        
+
+
     def forward(self, src_seq, trg_seq):
         
         src_mask = get_pad_mask(src_seq, self.src_pad_idx)  # ( b 1 seq_max_len ) : mask를 한번 더 감싸줬다. 왜?
