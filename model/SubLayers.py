@@ -40,9 +40,9 @@ class MultiHeadAttention(nn.Module):
         
         # Pass through the pre-attention projection: b x lq x (n*dv)
         # Separate different heads: b x lq x n x dv
-        q = self.w_qs(q).view(sz_b, len_q, n_head, d_k)
-        k = self.w_qs(k).view(sz_b, len_q, n_head, d_k)
-        v = self.w_qs(v).view(sz_b, len_q, n_head, d_v)
+        q = self.w_q(q).view(sz_b, len_q, n_head, d_k)
+        k = self.w_k(k).view(sz_b, len_q, n_head, d_k)
+        v = self.w_v(v).view(sz_b, len_q, n_head, d_v)
         
         # Transpose for attention dot product: b x n x lq x dv
         q, k, v = q.transpose(1,2), k.transpose(1,2), v.transpose(1,2)
@@ -81,8 +81,8 @@ class PositionwiseFeedForward(nn.Module):
         x = self.w_2(F.relu(self.w_1(x)))   # linear -> relu -> linear
         x = self.dropout(x)
         x += residual   # add
-        
-        x = self.layer_norm(X)  # and norm
+        #hey
+        x = self.layer_norm(x)  # and norm !
         
         return x
         
