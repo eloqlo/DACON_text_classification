@@ -22,6 +22,7 @@ class EncoderLayer(nn.Module):
 class DecoderLayer(nn.Module):
     
     def __init__(self, d_model, d_inner, n_head, d_k, d_v, dropout=0.1):
+        
         super(DecoderLayer, self).__init__()
         self.slf_attn = MultiHeadAttention(n_head, d_model, d_k, d_v, dropout=dropout)
         self.enc_attn = MultiHeadAttention(n_head, d_model, d_k, d_v, dropout=dropout)
@@ -29,6 +30,7 @@ class DecoderLayer(nn.Module):
     
     # self attention - enc attention - ffn
     def forward(self, dec_input, enc_output, slf_attn_mask=None, dec_enc_attn_mask=None):
+        
         dec_output, dec_slf_attn = self.slf_attn(dec_input, dec_input, dec_input, mask=slf_attn_mask)   # self attn layer 통과
         dec_output, dec_enc_attn = self.enc_attn(dec_output, enc_output, enc_output, mask=dec_enc_attn_mask)    # dec enc attn layer 통과
         dec_output = self.pos_ffn(dec_output)   # ffn 통과
