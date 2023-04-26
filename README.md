@@ -5,7 +5,7 @@ https://www.dacon.io/competitions/official/235747/overview/description
 
 ## 🔥Implemented Model
 - Naive Transformer Encoder (Not BERT)
-- It's in ./model/*
+- It's in ``./model/*``
 
 ## 🍉Used Scheme
 - Stratified K-fold Validation
