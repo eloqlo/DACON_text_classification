@@ -4,9 +4,9 @@ DACON TEXT_CLASSIFICATION, toy project for development &amp; training :)
 https://www.dacon.io/competitions/official/235747/overview/description
 
 ## 🔥Implemented Model
-- Naive Transformer Encoder (Not BERT)
-- It's in ``./model/*``
+- Naive Transformer Encoder.
+- It's in ``./model/*``.
 
 ## 🍉Used Scheme
-- Stratified K-fold Validation
-- Ensemble + Hard Voating
+- Stratified K-fold Validation.
+- Ensemble + Hard Voating.
