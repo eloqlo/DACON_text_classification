@@ -2,10 +2,10 @@
 https://www.dacon.io/competitions/official/235747/overview/description
 DACON TEXT_CLASSIFICATION, Toy project for "modeling"
 
-## 🔥Implemented Model
+## Implemented Model
 - Naive Transformer Encoder.
 - It's in ``./model/*``.
 
-## 🍉Used Scheme
+## Used Scheme
 - Stratified K-fold Validation.
 - Ensemble + Hard Voating.
